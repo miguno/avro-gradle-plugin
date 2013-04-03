@@ -25,7 +25,7 @@ The core information of the plugin (e.g. groupId, artifactId, latest version) is
 The rest of this section shows how to configure Gradle beyond this core information so that you can actually use it in
 practice.  The example ``build.gradle`` shown below assumes that:
 
-* Avro source files are stored in ``src/main/avro``.
+* Avro source files are stored in ``src/main/avro/``.
 * You are using Avro 1.7.4 for compiling the Avro source files (if you are not change the config as appropriate)
 
 Update your ``build.gradle`` to include the following configuration:
