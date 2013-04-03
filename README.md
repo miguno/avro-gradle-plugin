@@ -37,7 +37,7 @@ Update your ``build.gradle`` to include the following configuration:
         }
         dependencies {
             classpath 'org.apache.maven:maven-artifact:2.2.1' // 3.x won't work
-            classpath 'org.apache.avro:avro-compiler:1.7.4'
+            classpath 'org.apache.avro:avro-compiler:1.7.4' // use Avro 1.7.4 to compile the Avro files
             classpath 'org.clojars.miguno:avro-gradle-plugin:1.7.2'
         }
     }
