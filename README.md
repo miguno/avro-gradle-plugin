@@ -41,7 +41,7 @@ Update your ``build.gradle`` to include the following configuration:
 
     compileAvro {
         source = 'src/main/avro'
-        destinationDir = file("$buildDir/generated-sources/avro")
+        destinationDir = file("generated-sources/avro")
     }
 
     sourceSets {
@@ -57,14 +57,21 @@ Update your ``build.gradle`` to include the following configuration:
 
 Run the following two commands:
 
-    $ gradle clean
-    $ gradle build
-
-    # note: for some reason 'gradle clean build' in one go does not generate the Avro classes
+    $ gradle clean build
 
 The compiled Avro classes will automatically be added to your build artifact (by default, this is a jar file under
-``build/libs/``).  If you are curious to see the Java source of the generated Avro classes, take a look at
-``build/generated-sources/avro/``.
+``build/libs/``).
+
+Here is an overview of the Avro-related files being generated:
+
+    # Java source of generated Avro classes
+    generated-sources/avro/
+
+    # Java binaries of generated Avro classes
+    build/classes/main/
+
+Note that ``gradle clean`` will not automatically delete files the ``generated-sources`` directory tree.  You must do
+this manually if needed.
 
 
 # How to release the plugin
