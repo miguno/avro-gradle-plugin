@@ -39,8 +39,10 @@ Update your ``build.gradle`` to include the following configuration:
         compileAvro
     }
 
-    compileAvro.source = 'src/main/avro'
-    compileAvro.destinationDir = file("$buildDir/generated-sources/avro")
+    compileAvro {
+        source = 'src/main/avro'
+        destinationDir = file("$buildDir/generated-sources/avro")
+    }
 
     sourceSets {
         main {
