@@ -64,10 +64,11 @@ The compiled Avro classes will automatically be added to your build artifact (by
 
 Here is an overview of the Avro-related files being generated:
 
-    # Java source of generated Avro classes
+    # Java sources *.java of generated Avro classes
     generated-sources/avro/
 
-    # Java binaries of generated Avro classes
+    # Java binaries *.classes of generated Avro classes
+    # (this is the same directory where Gradle will place all other compiled Java classes as well)
     build/classes/main/
 
 Note that ``gradle clean`` will not automatically delete files the ``generated-sources`` directory tree.  You must do
