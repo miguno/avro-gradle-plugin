@@ -71,8 +71,8 @@ Here is an overview of the Avro-related files being generated:
     # (this is the same directory where Gradle will place all other compiled Java classes as well)
     build/classes/main/
 
-Note that ``gradle clean`` will not automatically delete files the ``generated-sources`` directory tree.  You must do
-this manually if needed.
+Note that ``gradle clean`` will not automatically delete files under the ``generated-sources`` directory tree.  You must
+do this manually if needed.
 
 
 # How to release the plugin
