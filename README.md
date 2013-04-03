@@ -6,7 +6,8 @@ Gradle Plugin for processing Avro files
 This project is a fork of the [original avro-gradle-plugin](https://github.com/iamsteveholmes/avro-gradle-plugin) by
 [Steve Holmes](https://github.com/iamsteveholmes).  On a high-level what I added to the original code is:
 
-* The Avro plugin for Gradle is published and made available via the public Clojars.org maven repository.
+* The Avro plugin for Gradle is published and made available via the public Clojars.org maven repository
+  at [https://clojars.org/org.clojars.miguno/avro-gradle-plugin](https://clojars.org/org.clojars.miguno/avro-gradle-plugin).
   This means that you don't have to build this plugin yourself anymore in order to use it.
 * Documentation on how to actually configure your ``build.gradle`` to make use of this plugin.
 
