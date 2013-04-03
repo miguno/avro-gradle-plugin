@@ -16,13 +16,17 @@ This project is a fork of the [original avro-gradle-plugin](https://github.com/i
 
 This section demonstrates how to configure Gradle to integrate the compilation of Avro source files as part of a build.
 
+
 ## Configuring Gradle
 
-The example ``build.gradle`` shown below assumes that:
+The core information of the plugin (e.g. groupId, artifactId, latest version) is available at
+[https://clojars.org/org.clojars.miguno/avro-gradle-plugin](https://clojars.org/org.clojars.miguno/avro-gradle-plugin).
+
+The rest of this section shows how to configure Gradle beyond this core information so that you can actually use it in
+practice.  The example ``build.gradle`` shown below assumes that:
 
 * Avro source files are stored in ``src/main/avro``.
 * You are using Avro 1.7.4 for compiling the Avro source files (if you are not change the config as appropriate)
-
 
 Update your ``build.gradle`` to include the following configuration:
 
@@ -60,6 +64,8 @@ Update your ``build.gradle`` to include the following configuration:
         }
     }
 
+Now you are ready to run a build with gradle as described in the next section.
+
 
 ## Running Gradle
 
@@ -67,8 +73,8 @@ Run the following two commands:
 
     $ gradle clean build
 
-The compiled Avro classes will automatically be added to your build artifact (by default, this is a jar file under
-``build/libs/``).
+As part of the normal build process gradle will generate all the required Avro files and automatically add the relevant
+class files to your project's build artifact (by default, this is a jar file under ``build/libs/``).
 
 Here is an overview of the Avro-related files being generated:
 
