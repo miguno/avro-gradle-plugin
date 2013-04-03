@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+     This file is only used for pushing build artifacts to Clojars.org.
+
+     It is NOT used for the actual build.  The build uses gradle, not maven.  See build.gradle for details.
+
+     For more information about how to push build artifacts to Clojars.org:
+     * https://github.com/ato/clojars-web/wiki/POM
+     * https://github.com/ato/clojars-web/wiki/Pushing
+-->
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.clojars.miguno</groupId>
+  <artifactId>avro-gradle-plugin</artifactId>
+  <version>1.7.2</version>
+  <name>avro-gradle-plugin</name>
+  <description>Gradle Plugin for processing Avro files</description>
+  <licenses>
+    <license>
+        <name>Apache License Version 2.0</name>
+        <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <repositories>
+    <repository>
+      <id>clojars</id>
+      <url>http://clojars.org/repo/</url>
+    </repository>
+  </repositories>
+</project>
