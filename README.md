@@ -8,6 +8,7 @@ Table of Contents
 
 * <a href="#Usage">Usage</a>
 * <a href="#Development">Development</a>
+* <a href="#Changelog">Change log</a>
 * <a href="#Contributing">Contributing to avro-gradle-plugin</a>
 * <a href="#License">License</a>
 * <a href="#Credits">Credits</a>
@@ -121,6 +122,13 @@ Finally you can run the build, followed by pushing the build artifact to Clojars
 
 See [https://clojars.org/org.clojars.miguno/avro-gradle-plugin](https://clojars.org/org.clojars.miguno/avro-gradle-plugin)
 for details.
+
+
+<a name="Changelog"></a>
+
+# Change log
+
+See [CHANGELOG](CHANGELOG.md).
 
 
 <a name="Contributing"></a>
