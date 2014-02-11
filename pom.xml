@@ -13,7 +13,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.clojars.miguno</groupId>
   <artifactId>avro-gradle-plugin</artifactId>
-  <version>1.7.2</version>
+  <version>1.7.6-SNAPSHOT</version>
   <name>avro-gradle-plugin</name>
   <description>Gradle Plugin for processing Avro files</description>
   <licenses>
