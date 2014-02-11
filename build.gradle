@@ -29,9 +29,3 @@ dependencies {
 task wrapper(type: Wrapper) {
   gradleVersion = '1.9'
 }
-
-/*
-jar {
-    dependsOn configurations.runtime
-    from { configurations.runtime.collect { it.isDirectory() ? it : zipTree(it) } }
-}*/
