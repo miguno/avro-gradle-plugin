@@ -91,9 +91,17 @@ must do this manually if needed.
 
 # How to release the plugin
 
-First, you must update the version identifier in `build.gradle` and `pom.xml` (they MUST MATCH).
+First, you must update the version identifier in `gradle.properties` and `pom.xml` (they MUST MATCH).
 
-Then you can run the build, followed by pushing the build artifact to Clojars.org.
+* `gradle.properties`: update the value of the `version` setting
+* `pom.xml`: update the value of the `<version>` setting
+
+Second, check whether the actual Avro version we are using is correct.  Typically, we want to use the same version
+identifier for this Gradle plugin as the Avro version we are compiling against.
+
+* `build.gradle`: update the dependency `org.apache.avro:avro-compiler:TARGET_VERSION` if needed
+
+Finally you can run the build, followed by pushing the build artifact to Clojars.org.
 
     $ ./gradlew clean build
     $ scp pom.xml ./build/libs/avro-gradle-plugin-*.jar clojars@clojars.org:
