@@ -21,7 +21,7 @@ uploadArchives {
 
 dependencies {
     compile gradleApi()
-    compile "org.apache.avro:avro-compiler:${version}"
+    compile 'org.apache.avro:avro-compiler:1.7.6'
     groovy "org.codehaus.groovy:groovy-all:${groovyVersion}"
 }
 
