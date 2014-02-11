@@ -145,6 +145,12 @@ identifier for this Gradle plugin as the Avro version we are compiling against.
 
 * `build.gradle`: update the dependency `org.apache.avro:avro-compiler:TARGET_VERSION` if needed
 
+Third, make sure you create a release tag:
+
+    # Example for version 1.7.6
+    $ git tag -a 1.7.6 -m 'Release 1.7.6'
+    $ git push origin 1.7.6
+
 Finally you can run the build, followed by pushing the build artifact to Clojars.org.
 
     $ ./gradlew clean build
