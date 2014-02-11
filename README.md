@@ -12,12 +12,12 @@ This project is a fork of the [original avro-gradle-plugin](https://github.com/i
 * Documentation on how to actually configure your `build.gradle` to make use of this plugin.
 
 
-# How to use
+# Usage
 
 This section demonstrates how to configure Gradle to integrate the compilation of Avro source files as part of a build.
 
 
-## Configuring Gradle
+## Configuring your Gradle build to use this plugin
 
 The core information of the plugin (e.g. groupId, artifactId, latest version) is available at
 [https://clojars.org/org.clojars.miguno/avro-gradle-plugin](https://clojars.org/org.clojars.miguno/avro-gradle-plugin).
@@ -71,12 +71,12 @@ Now you are ready to run a build with gradle as described in the next section.
 
 Run the following two commands:
 
-    $ ./gradlew clean build
+    $ gradle clean build
 
 As part of the normal build process gradle will generate all the required Avro files and automatically add the relevant
 class files to your project's build artifact (by default, this is a jar file under `build/libs/`).
 
-Here is an overview of the Avro-related files being generated:
+Here is an overview of the Avro-related files being generated in your code project:
 
     # Java sources *.java of generated Avro classes
     generated-sources/avro/
@@ -85,11 +85,17 @@ Here is an overview of the Avro-related files being generated:
     # (this is the same directory where Gradle will place all other compiled Java classes as well)
     build/classes/main/
 
-Note that `./gradlew clean` will not automatically delete files under the `generated-sources` directory tree.  You
+Note that `gradle clean` will not automatically delete files under the `generated-sources` directory tree.  You
 must do this manually if needed.
 
 
-# How to release the plugin
+# Development
+
+This section is only relevant to developers of this plugin.  As a mere user of the plugin you don't need to follow any
+of this.
+
+
+## How to release this plugin
 
 First, you must update the version identifier in `gradle.properties` and `pom.xml` (they MUST MATCH).
 
