@@ -1,16 +1,20 @@
-avro-gradle-plugin
-==================
+# avro-gradle-plugin
 
-Gradle Plugin for processing Avro files
+A Gradle plugin for processing Avro files
 
-This project is a fork of the [original avro-gradle-plugin](https://github.com/iamsteveholmes/avro-gradle-plugin) by
-[Steve Holmes](https://github.com/iamsteveholmes).  On a high-level what I added to the original code is:
+---
 
-* The Avro plugin for Gradle is published and made available via the public Clojars.org maven repository
-  at [https://clojars.org/org.clojars.miguno/avro-gradle-plugin](https://clojars.org/org.clojars.miguno/avro-gradle-plugin).
-  This means that you don't have to build this plugin yourself anymore in order to use it.
-* Documentation on how to actually configure your `build.gradle` to make use of this plugin.
+Table of Contents
 
+* <a href="#Usage">Usage</a>
+* <a href="#Development">Development</a>
+* <a href="#Contributing">Contributing to avro-gradle-plugin</a>
+* <a href="#License">License</a>
+* <a href="#Credits">Credits</a>
+
+---
+
+<a name="Usage"></a>
 
 # Usage
 
@@ -90,6 +94,8 @@ Note that `gradle clean` will not automatically delete files under the `generate
 must do this manually if needed.
 
 
+<a name="Development"></a>
+
 # Development
 
 This section is only relevant to developers of this plugin.  As a mere user of the plugin you don't need to follow any
@@ -115,3 +121,39 @@ Finally you can run the build, followed by pushing the build artifact to Clojars
 
 See [https://clojars.org/org.clojars.miguno/avro-gradle-plugin](https://clojars.org/org.clojars.miguno/avro-gradle-plugin)
 for details.
+
+
+<a name="Contributing"></a>
+
+# Contributing to avro-gradle-plugin
+
+Code contributions, bug reports, feature requests etc. are all welcome.
+
+If you are new to GitHub please read [Contributing to a project](https://help.github.com/articles/fork-a-repo) for how
+to send patches and pull requests to avro-gradle-plugin.
+
+
+<a name="License"></a>
+
+# License
+
+Copyright © 2013-2014 Michael G. Noll.  Initial code written by Steve Holmes (see _Credits_ section below).
+
+See [LICENSE](LICENSE) for licensing information.  We are using the same license as the inital project.
+
+
+<a name="Credits"></a>
+
+# Credits
+
+This project is a fork of the [original avro-gradle-plugin](https://github.com/iamsteveholmes/avro-gradle-plugin) by
+[Steve Holmes](https://github.com/iamsteveholmes).
+
+On a high-level what I added to the original code is:
+
+* The Avro plugin for Gradle is published and made available via the public Clojars.org maven repository
+  at [https://clojars.org/org.clojars.miguno/avro-gradle-plugin](https://clojars.org/org.clojars.miguno/avro-gradle-plugin).
+  This means that you don't have to build this plugin yourself anymore in order to use it.
+* Documentation on how to actually configure your `build.gradle` to make use of this plugin.
+
+Many thanks to Steve Holmes for creating the original version of the plugin!
