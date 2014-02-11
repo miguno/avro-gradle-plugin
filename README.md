@@ -9,7 +9,7 @@ This project is a fork of the [original avro-gradle-plugin](https://github.com/i
 * The Avro plugin for Gradle is published and made available via the public Clojars.org maven repository
   at [https://clojars.org/org.clojars.miguno/avro-gradle-plugin](https://clojars.org/org.clojars.miguno/avro-gradle-plugin).
   This means that you don't have to build this plugin yourself anymore in order to use it.
-* Documentation on how to actually configure your ``build.gradle`` to make use of this plugin.
+* Documentation on how to actually configure your `build.gradle` to make use of this plugin.
 
 
 # How to use
@@ -23,12 +23,12 @@ The core information of the plugin (e.g. groupId, artifactId, latest version) is
 [https://clojars.org/org.clojars.miguno/avro-gradle-plugin](https://clojars.org/org.clojars.miguno/avro-gradle-plugin).
 
 The rest of this section shows how to configure Gradle beyond this core information so that you can actually use it in
-practice.  The example ``build.gradle`` shown below assumes that:
+practice.  The example `build.gradle` shown below assumes that:
 
-* Avro source files are stored in ``src/main/avro/``.
+* Avro source files are stored in `src/main/avro/`.
 * You are using Avro 1.7.6 for compiling the Avro source files (if you are not change the config as appropriate)
 
-Update your ``build.gradle`` to include the following configuration:
+Update your `build.gradle` to include the following configuration:
 
     buildscript {
         repositories {
@@ -74,7 +74,7 @@ Run the following two commands:
     $ ./gradlew clean build
 
 As part of the normal build process gradle will generate all the required Avro files and automatically add the relevant
-class files to your project's build artifact (by default, this is a jar file under ``build/libs/``).
+class files to your project's build artifact (by default, this is a jar file under `build/libs/`).
 
 Here is an overview of the Avro-related files being generated:
 
@@ -85,13 +85,13 @@ Here is an overview of the Avro-related files being generated:
     # (this is the same directory where Gradle will place all other compiled Java classes as well)
     build/classes/main/
 
-Note that ``./gradlew clean`` will not automatically delete files under the ``generated-sources`` directory tree.  You
+Note that `./gradlew clean` will not automatically delete files under the `generated-sources` directory tree.  You
 must do this manually if needed.
 
 
 # How to release the plugin
 
-First, you must update the version identifier in ``build.gradle`` and ``pom.xml`` (they MUST MATCH).
+First, you must update the version identifier in `build.gradle` and `pom.xml` (they MUST MATCH).
 
 Then you can run the build, followed by pushing the build artifact to Clojars.org.
 
