@@ -44,8 +44,9 @@ Update your `build.gradle` to include the following configuration:
 
     apply plugin: 'avro-gradle-plugin'
 
-    sourceCompatibility = 1.6
-    targetCompatibility = 1.6
+    // Change setting to 1.6 if you want to build with Java 6
+    sourceCompatibility = 1.7
+    targetCompatibility = 1.7
 
     dependencies {
         compileAvro
