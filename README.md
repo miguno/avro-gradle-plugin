@@ -22,10 +22,33 @@ Table of Contents
 This section demonstrates how to configure Gradle to integrate the compilation of Avro source files as part of a build.
 
 
-## Configuring your Gradle build to use this plugin
+## Available versions
 
-The core information of the plugin (e.g. groupId, artifactId, latest version) is available at
-[https://clojars.org/org.clojars.miguno/avro-gradle-plugin](https://clojars.org/org.clojars.miguno/avro-gradle-plugin).
+The plugin is available from the [Clojars.org](https://clojars.org) repository at the URL
+[https://clojars.org/repo](https://clojars.org/repo).
+
+The latest version is:
+
+    org.clojars.miguno:avro-gradle-plugin:1.7.6
+
+You can find past versions by browsing the plugin's Clojars landing page at
+[avro-gradle-plugin](https://clojars.org/org.clojars.miguno/avro-gradle-plugin)).
+
+See the [CHANGELOG](CHANGELOG.md) as well as the
+[commit history](https://github.com/miguno/avro-gradle-plugin/commits/master) for differences between versions.
+
+
+## Supported configuration parameters
+
+* `compileAvro.source`: Location of Avro files (e.g. `*.avsc` schema files)
+* `compileAvro.destinationDir`: Destination directory for generated files
+* `compileAvro.stringType`: Java type to be emitted for string schemas (default: `CharSequence`).  Possible values:
+  `CharSequence`,
+  `String` (giving you a [java.lang.String](http://docs.oracle.com/javase/7/docs/api/java/lang/String.html)),
+  `Utf8` (giving you a [Utf8](https://avro.apache.org/docs/1.7.6/api/java/org/apache/avro/util/Utf8.html))
+
+
+## Example: Configuring your Gradle build to use this plugin
 
 The rest of this section shows how to configure Gradle beyond this core information so that you can actually use it in
 practice.  The example `build.gradle` shown below assumes that:
@@ -36,15 +59,15 @@ practice.  The example `build.gradle` shown below assumes that:
 Update your `build.gradle` to include the following configuration:
 
     buildscript {
-        repositories {
-            mavenCentral()
-            mavenRepo url: "http://clojars.org/repo"
-        }
-        dependencies {
-            classpath 'org.apache.maven:maven-artifact:2.2.1' // 3.x won't work
-            classpath 'org.apache.avro:avro-compiler:1.7.6' // use Avro 1.7.6 to compile the Avro files
-            classpath 'org.clojars.miguno:avro-gradle-plugin:1.7.6'
-        }
+      repositories {
+        mavenCentral()
+        maven { url "http://clojars.org/repo" } // Required to automatically download this plugin
+      }
+      dependencies {
+        classpath 'org.apache.maven:maven-artifact:2.2.1' // 3.x won't work
+        classpath 'org.apache.avro:avro-compiler:1.7.6' // Use Avro 1.7.6 to compile the Avro files
+        classpath 'org.clojars.miguno:avro-gradle-plugin:1.7.6'
+      }
     }
 
     apply plugin: 'avro-gradle-plugin'
@@ -54,20 +77,23 @@ Update your `build.gradle` to include the following configuration:
     targetCompatibility = 1.7
 
     dependencies {
-        compileAvro
+      compileAvro
     }
 
     compileAvro {
-        source = 'src/main/avro'
-        destinationDir = file("generated-sources/avro")
+      source = 'src/main/avro'
+      destinationDir = file("generated-sources/avro")
+      // Uncomment the following line to explicitly set the Java type
+      // to be emitted for string schemas (here: java.lang.String).
+      // stringType = 'String'
     }
 
     sourceSets {
-        main {
-            java {
-                srcDir compileAvro.destinationDir
-            }
+      main {
+        java {
+          srcDir compileAvro.destinationDir
         }
+      }
     }
 
 Now you are ready to run a build with gradle as described in the next section.
@@ -77,10 +103,14 @@ Now you are ready to run a build with gradle as described in the next section.
 
 Run the following two commands:
 
-    $ gradle clean build
+    $ gradle build
 
 As part of the normal build process gradle will generate all the required Avro files and automatically add the relevant
 class files to your project's build artifact (by default, this is a jar file under `build/libs/`).
+
+You can also manually trigger a compilation of Avro files via the `compileAvro` task:
+
+    $ gradle compileAvro
 
 Here is an overview of the Avro-related files being generated in your code project:
 
