@@ -26,7 +26,7 @@ The rest of this section shows how to configure Gradle beyond this core informat
 practice.  The example ``build.gradle`` shown below assumes that:
 
 * Avro source files are stored in ``src/main/avro/``.
-* You are using Avro 1.7.4 for compiling the Avro source files (if you are not change the config as appropriate)
+* You are using Avro 1.7.6 for compiling the Avro source files (if you are not change the config as appropriate)
 
 Update your ``build.gradle`` to include the following configuration:
 
@@ -37,7 +37,7 @@ Update your ``build.gradle`` to include the following configuration:
         }
         dependencies {
             classpath 'org.apache.maven:maven-artifact:2.2.1' // 3.x won't work
-            classpath 'org.apache.avro:avro-compiler:1.7.4' // use Avro 1.7.4 to compile the Avro files
+            classpath 'org.apache.avro:avro-compiler:1.7.6' // use Avro 1.7.6 to compile the Avro files
             classpath 'org.clojars.miguno:avro-gradle-plugin:1.7.2'
         }
     }
