@@ -71,7 +71,7 @@ Now you are ready to run a build with gradle as described in the next section.
 
 Run the following two commands:
 
-    $ gradle clean build
+    $ ./gradlew clean build
 
 As part of the normal build process gradle will generate all the required Avro files and automatically add the relevant
 class files to your project's build artifact (by default, this is a jar file under ``build/libs/``).
@@ -85,8 +85,8 @@ Here is an overview of the Avro-related files being generated:
     # (this is the same directory where Gradle will place all other compiled Java classes as well)
     build/classes/main/
 
-Note that ``gradle clean`` will not automatically delete files under the ``generated-sources`` directory tree.  You must
-do this manually if needed.
+Note that ``./gradlew clean`` will not automatically delete files under the ``generated-sources`` directory tree.  You
+must do this manually if needed.
 
 
 # How to release the plugin
@@ -95,7 +95,7 @@ First, you must update the version identifier in ``build.gradle`` and ``pom.xml`
 
 Then you can run the build, followed by pushing the build artifact to Clojars.org.
 
-    $ gradle clean build
+    $ ./gradlew clean build
     $ scp pom.xml ./build/libs/avro-gradle-plugin-*.jar clojars@clojars.org:
 
 See [https://clojars.org/org.clojars.miguno/avro-gradle-plugin](https://clojars.org/org.clojars.miguno/avro-gradle-plugin)
