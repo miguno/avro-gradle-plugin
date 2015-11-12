@@ -1,28 +1,40 @@
-apply plugin: 'java'
-apply plugin: 'groovy'
-apply plugin: 'maven'
-apply plugin: 'idea'
-
 repositories {
     mavenCentral()
     mavenLocal()
-    maven {
-        url 'http://repository.codehaus.org/org/codehaus/groovy'
-    }
+    maven { url 'http://repository.codehaus.org/org/codehaus/groovy' }
 }
 
-uploadArchives {
-    repositories {
-        mavenDeployer {
-            repository(url: "http://nexus.corp.macermedia.com/nexus/content/repositories/releases")
-        }
-    }
-}
+apply plugin: 'java'
+apply plugin: 'groovy'
+apply plugin: 'maven'
+apply plugin: 'maven-publish'
+apply plugin: 'idea'
 
 dependencies {
     compile gradleApi()
     compile 'org.apache.avro:avro-compiler:1.7.7'
     groovy "org.codehaus.groovy:groovy-all:${groovyVersion}"
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+}
+
+publishing {
+    repositories {
+        maven {
+            url "https://clojars.org/repo/"
+            // Configure your credentials in ~/.gradle/gradle.properties
+            credentials {
+                username clojarsUsername
+                password clojarsPassword
+            }
+        }
+    }
 }
 
 // See http://www.gradle.org/docs/current/userguide/gradle_wrapper.html

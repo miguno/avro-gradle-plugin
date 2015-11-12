@@ -145,30 +145,25 @@ identifier for this Gradle plugin as the Avro version we are compiling against.
 
 * `build.gradle`: update the dependency `org.apache.avro:avro-compiler:TARGET_VERSION` if needed
 
-Third, make sure you create a release tag:
+Third make sure you have defined your `clojarsUsername` and `clojarsPassword` settings in your local
+`~/.gradle/gradle.properties`:
+
+```
+# ~/.gradle/gradle.properties
+clojarsUsername=YOUR_CLOJARS_USERNAME
+clojarsPassword=YOUR_CLOJARS_PASSWORD
+```
+
+Fourth, make sure you create a release tag:
 
     # Example for version 1.7.7
     $ git tag -a 1.7.7 -m 'Release 1.7.7'
     $ git push origin 1.7.7
 
-Fourth, create the file `<settings.xml` and add your Clojars credentials:
-
-```xml
-<settings>
- <servers>
-  <server>
-   <id>clojars</id>
-   <username>YOUR_CLOJARS_USERNAME</username>
-   <password>YOUR_CLOJARS_PASSWORD</password>
-  </server>
- </servers>
-</settings>
-```
 
 Finally you can run the build, followed by pushing the build artifact to Clojars.org.
 
-    $ ./gradlew clean build
-    $ mvn -s settings.xml deploy
+    $ ./gradlew clean publish
 
 
 See [https://clojars.org/org.clojars.miguno/avro-gradle-plugin](https://clojars.org/org.clojars.miguno/avro-gradle-plugin)
