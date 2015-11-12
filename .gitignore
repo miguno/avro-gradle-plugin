@@ -28,3 +28,6 @@ overlays
 # Gradle
 build/
 out/
+
+# Credentials
+settings.xml
