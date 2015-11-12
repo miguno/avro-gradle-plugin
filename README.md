@@ -29,7 +29,11 @@ The plugin is available from the [Clojars.org](https://clojars.org) repository a
 
 The latest version is:
 
-    org.clojars.miguno:avro-gradle-plugin:1.7.7
+    org.clojars.miguno:avro-gradle-plugin:1.7.7.2  # for Avro 1.7.7
+
+Older versions:
+
+    org.clojars.miguno:avro-gradle-plugin:1.7.6  # for Avro 1.7.6
 
 You can find past versions by browsing the plugin's Clojars landing page at
 [avro-gradle-plugin](https://clojars.org/org.clojars.miguno/avro-gradle-plugin)).
@@ -66,7 +70,7 @@ Update your `build.gradle` to include the following configuration:
       dependencies {
         classpath 'org.apache.maven:maven-artifact:2.2.1' // 3.x won't work
         classpath 'org.apache.avro:avro-compiler:1.7.7' // Use Avro 1.7.7 to compile the Avro files
-        classpath 'org.clojars.miguno:avro-gradle-plugin:1.7.7'
+        classpath 'org.clojars.miguno:avro-gradle-plugin:1.7.7.2'
       }
     }
 
