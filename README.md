@@ -29,7 +29,7 @@ The plugin is available from the [Clojars.org](https://clojars.org) repository a
 
 The latest version is:
 
-    org.clojars.miguno:avro-gradle-plugin:1.7.6
+    org.clojars.miguno:avro-gradle-plugin:1.7.7
 
 You can find past versions by browsing the plugin's Clojars landing page at
 [avro-gradle-plugin](https://clojars.org/org.clojars.miguno/avro-gradle-plugin)).
@@ -45,7 +45,7 @@ See the [CHANGELOG](CHANGELOG.md) as well as the
 * `compileAvro.stringType`: Java type to be emitted for string schemas (default: `CharSequence`).  Possible values:
   `CharSequence`,
   `String` (giving you a [java.lang.String](http://docs.oracle.com/javase/7/docs/api/java/lang/String.html)),
-  `Utf8` (giving you a [Utf8](https://avro.apache.org/docs/1.7.6/api/java/org/apache/avro/util/Utf8.html))
+  `Utf8` (giving you a [Utf8](https://avro.apache.org/docs/1.7.7/api/java/org/apache/avro/util/Utf8.html))
 
 
 ## Example: Configuring your Gradle build to use this plugin
@@ -54,7 +54,7 @@ The rest of this section shows how to configure Gradle beyond this core informat
 practice.  The example `build.gradle` shown below assumes that:
 
 * Avro source files are stored in `src/main/avro/`.
-* You are using Avro 1.7.6 for compiling the Avro source files (if you are not change the config as appropriate)
+* You are using Avro 1.7.7 for compiling the Avro source files (if you are not change the config as appropriate)
 
 Update your `build.gradle` to include the following configuration:
 
@@ -65,8 +65,8 @@ Update your `build.gradle` to include the following configuration:
       }
       dependencies {
         classpath 'org.apache.maven:maven-artifact:2.2.1' // 3.x won't work
-        classpath 'org.apache.avro:avro-compiler:1.7.6' // Use Avro 1.7.6 to compile the Avro files
-        classpath 'org.clojars.miguno:avro-gradle-plugin:1.7.6'
+        classpath 'org.apache.avro:avro-compiler:1.7.7' // Use Avro 1.7.7 to compile the Avro files
+        classpath 'org.clojars.miguno:avro-gradle-plugin:1.7.7'
       }
     }
 
@@ -147,9 +147,9 @@ identifier for this Gradle plugin as the Avro version we are compiling against.
 
 Third, make sure you create a release tag:
 
-    # Example for version 1.7.6
-    $ git tag -a 1.7.6 -m 'Release 1.7.6'
-    $ git push origin 1.7.6
+    # Example for version 1.7.7
+    $ git tag -a 1.7.7 -m 'Release 1.7.7'
+    $ git push origin 1.7.7
 
 Finally you can run the build, followed by pushing the build artifact to Clojars.org.
 

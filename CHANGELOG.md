@@ -1,5 +1,10 @@
 # Change log
 
+## 1.7.7 (November 12, 2015)
+
+* Upgrade to Avro 1.7.7.
+
+
 ## 1.7.6 (February 11, 2014)
 
 * Support `stringType` setting when compiling `*.avsc` Avro schema files.
