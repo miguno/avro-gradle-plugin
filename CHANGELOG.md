@@ -1,6 +1,13 @@
 # Change log
 
+## 1.7.7.2 (November 12, 2015)
+
+* Use this version instead of 1.7.7 and 1.7.7.1.
+
+
 ## 1.7.7 (November 12, 2015)
+
+**BROKEN VERSION, USE 1.7.7.2 INSTEAD**
 
 * Upgrade to Avro 1.7.7.
 
