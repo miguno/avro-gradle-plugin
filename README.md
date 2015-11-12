@@ -181,7 +181,7 @@ to send patches and pull requests to avro-gradle-plugin.
 
 # License
 
-Copyright © 2013-2014 Michael G. Noll.  Initial code written by Steve Holmes (see _Credits_ section below).
+Copyright © 2013-2015 Michael G. Noll.  Initial code written by Steve Holmes (see _Credits_ section below).
 
 See [LICENSE](LICENSE) for licensing information.  We are using the same license as the inital project.
 
