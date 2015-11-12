@@ -151,10 +151,25 @@ Third, make sure you create a release tag:
     $ git tag -a 1.7.7 -m 'Release 1.7.7'
     $ git push origin 1.7.7
 
+Fourth, create the file `<settings.xml` and add your Clojars credentials:
+
+```xml
+<settings>
+ <servers>
+  <server>
+   <id>clojars</id>
+   <username>YOUR_CLOJARS_USERNAME</username>
+   <password>YOUR_CLOJARS_PASSWORD</password>
+  </server>
+ </servers>
+</settings>
+```
+
 Finally you can run the build, followed by pushing the build artifact to Clojars.org.
 
     $ ./gradlew clean build
-    $ scp pom.xml ./build/libs/avro-gradle-plugin-*.jar clojars@clojars.org:
+    $ mvn -s settings.xml deploy
+
 
 See [https://clojars.org/org.clojars.miguno/avro-gradle-plugin](https://clojars.org/org.clojars.miguno/avro-gradle-plugin)
 for details.
